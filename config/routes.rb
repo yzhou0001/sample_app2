@@ -1,13 +1,21 @@
 SampleApp2::Application.routes.draw do
   resources :users
+  resources :sessions, only: [ :new, :create, :destroy ]
+  
+  get "value_drivers/new"
   
   root 'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'
   match '/explore', to: 'static_pages#explore', via: 'get'
   match '/build', to: 'static_pages#build', via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
   match '/help', to: 'static_pages#help', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
+  match 'value_driver', to: 'value_drivers#show', via: 'get'  
+  match 'value_driver/index', to: 'value_drivers#index', via: 'get'  
+  
   
  
   
