@@ -1,11 +1,10 @@
 SampleApp2::Application.routes.draw do
   resources :users
-<<<<<<< HEAD
-=======
+
   resources :sessions, only: [ :new, :create, :destroy ]
   
->>>>>>> sign-in-out
-  get "value_drivers/new"
+
+ # get "value_drivers/new"
   
   root 'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'
@@ -16,15 +15,9 @@ SampleApp2::Application.routes.draw do
   match '/help', to: 'static_pages#help', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
-  match 'value_driver', to: 'value_drivers#show', via: 'get'  
-  match 'value_driver/index', to: 'value_drivers#index', via: 'get'  
-<<<<<<< HEAD
-=======
-  
-  
- 
->>>>>>> sign-in-out
-  
+ # match 'value_driver', to: 'value_drivers#show', via: 'get'  
+  # match 'value_driver/index', to: 'value_drivers#index', via: 'get'  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
