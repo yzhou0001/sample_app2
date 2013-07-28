@@ -1,7 +1,4 @@
 module SessionsHelper
-<<<<<<< HEAD
-end
-=======
 
   def sign_in(user)
     remember_token = User.new_remember_token
@@ -28,4 +25,4 @@ end
     cookies.delete(:remember_token)
   end
 end
->>>>>>> sign-in-out
+
