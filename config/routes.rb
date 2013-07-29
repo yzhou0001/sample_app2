@@ -1,7 +1,7 @@
 SampleApp2::Application.routes.draw do
   resources :users
   resources :sessions, only: [ :new, :create, :destroy ]
-  resources :value_drivers
+  resources :value_drivers, only: [:show, :index]
 
  # get "value_drivers/new"
   
