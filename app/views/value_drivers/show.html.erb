@@ -1,3 +1,11 @@
-<% provide(:title, 'Value driver') %>
-<h1>Value driver</h1>
+<% provide(:title, @value_driver.name) %>
 
+<div class="row">
+	<aside class="span4">
+		<section> 
+			<h1>
+				<%= @value_driver.name %>
+			</h1>
+		</section>
+	</aside>
+</div>

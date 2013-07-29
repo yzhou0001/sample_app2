@@ -1,7 +1,7 @@
 class ValueDriversController < ApplicationController
 
   def show
-     @value_driver = ValueDriver.first
+     @value_driver = ValueDriver.find(params[:id])  
   end
   
   def new
@@ -9,6 +9,7 @@ class ValueDriversController < ApplicationController
   end
   
   def index
-    @value_drivers = ValueDriver.all
+    @value_drivers = ValueDriver.paginate(page: params[:page])
   end
 end
+
