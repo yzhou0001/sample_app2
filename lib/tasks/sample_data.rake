@@ -15,5 +15,12 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
+
+    ValueDriver.create!(name: "Asset",
+                       text: "this is the description for asset...")
+    ValueDriver.create!(name: "Financial",
+                       text: "this is the description for financial..")
+    ValueDriver.create!(name: "Employee",
+                       text: "this is the description for employee...")
   end
 end
