@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <li>
   <%= gravatar_for user, size: 52 %>
   <%= link_to user.name, user %>
@@ -7,13 +6,3 @@
                                   data: { confirm: "You sure?" } %>
   <% end %>
 </li>
-=======
-    <li>
-      <%= gravatar_for user, size: 52 %>
-      <%= link_to user.name, user %>
-      <% if current_user.admin? && !current_user?(user) %>
-    	| <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-  <% end %>
-    </li>
->>>>>>> d73a22a571763c0494413a978350d5938ec0e1d2
