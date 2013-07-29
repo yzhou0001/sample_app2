@@ -22,8 +22,8 @@ describe "Static pages" do
     it { should have_title(full_title('Help')) }
    end 
   
-   describe "explore page" do
-     before { visit explore_path}
+   describe "Explore page" do
+     before { visit explore_path }
     
      it { should have_content('Explore') }
      it { should have_title(full_title('Explore')) }
