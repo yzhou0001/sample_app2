@@ -15,6 +15,7 @@ SampleApp2::Application.routes.draw do
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/showall', to: 'value_drivers#showall', via: 'get'
+   match '/addnew', to: 'value_drivers#new', via: 'get'
 
   # match 'value_driver/index', to: 'value_drivers#index', via: 'get'  
 
