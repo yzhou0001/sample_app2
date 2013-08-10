@@ -41,7 +41,7 @@ class ValueDriversController < ApplicationController
   def index
     @value_drivers = ValueDriver.paginate(page: params[:page])
   end
-  
+
 
 private
 
