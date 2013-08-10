@@ -1,0 +1,12 @@
+<% provide(:title, 'All value drivers') %>
+<h1>All value drivers</h1>
+
+<ul class="users">
+  <% @value_drivers.each do |value_driver| %>
+    <li>
+     
+      <%= link_to value_driver.name, value_driver %>
+    </li>
+  <% end %>
+</ul>
+   
