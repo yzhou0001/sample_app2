@@ -8,6 +8,10 @@ class ValueDriversController < ApplicationController
    
   end
   
+  def edit
+    @value_driver = ValueDriver.find(params[:id])
+  end
+  
   def index
     @value_drivers = ValueDriver.paginate(page: params[:page])
   end

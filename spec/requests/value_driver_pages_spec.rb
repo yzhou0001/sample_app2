@@ -20,4 +20,17 @@ describe "Value driver Pages" do
   
   end
   
+  describe "edit" do
+    before { visit edit_value_driver_path(value_driver) }
+    
+    describe "Build page" do
+      it { should have_content("Update value drivers") }
+      it { should have_title("Edit Value Dariver") }
+    end
+    describe "with invalid information" do
+      before { clcik_button "Save changes" }
+      it { should have_content('error') }
+    end
+  end
+  
 end

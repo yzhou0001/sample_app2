@@ -1,0 +1,20 @@
+<% provide(:title, "Edit Value Driver") %>
+<h1>Update value drivers</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@value_driver) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :text %>
+      <%= f.text_field :text %>
+
+       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+   
+  </div>
+</div>

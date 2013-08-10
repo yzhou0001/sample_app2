@@ -49,54 +49,6 @@ describe "User Pages" do
     end
   end
 
-  describe "index" do
-    let(:user) { FactoryGirl.create(:user) }
-    
-    before do
-      sign_in user
-      visit users_path
-    end
-
-    it { should have_title('All users') }
-    it { should have_content('All users') }
-    
-    describe "pagination" do
-
-      before(:all) { 30.times { FactoryGirl.create(:user) } }
-      after(:all)  { User.delete_all }
-
-      it { should have_selector('div.pagination') }
-
-      it "should list each user" do
-        User.paginate(page: 1).each do |user|
-          expect(page).to have_selector('li', text: user.name)
-        end
-      end
-    end
-    
-     describe "delete links" do
-
-      it { should_not have_link('delete') }
-
-      describe "as an admin user" do
-        let(:admin) { FactoryGirl.create(:admin) }
-        before do
-          sign_in admin
-          visit users_path
-        end
-
-        it { should have_link('delete', href: user_path(User.first)) }
-        it "should be able to delete another user" do
-          expect do
-            click_link('delete', match: :first)
-          end.to change(User, :count).by(-1)
-        end
-        it { should_not have_link('delete', href: user_path(admin)) }
-      end
-    end
-    
-  end
-  
  describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
     before { visit user_path(user) }
@@ -152,7 +104,6 @@ describe "User Pages" do
     end
   end
  end
-<<<<<<< HEAD
  describe "edit" do
     let(:user) { FactoryGirl.create(:user) }
     before do
@@ -160,21 +111,11 @@ describe "User Pages" do
       visit edit_user_path(user)
     end
 
-=======
-  describe "edit" do
-    let(:user) { FactoryGirl.create(:user) }
-   before do
-      sign_in user
-      visit edit_user_path(user)
-    end
-    
->>>>>>> d73a22a571763c0494413a978350d5938ec0e1d2
     describe "page" do
       it { should have_content("Update your profile") }
       it { should have_title("Edit user") }
       it { should have_link('change', href: 'http://gravatar.com/emails') }
     end
-<<<<<<< HEAD
 
     describe "with invalid information" do
       before { click_button "Save changes" }
@@ -183,16 +124,6 @@ describe "User Pages" do
     end
   
  describe "with valid information" do
-=======
-    
-    describe "with invalid information" do
-      before { click_button "Save changes" }
-      
-      it { should have_content('error') }
-    end
-    
-    describe "with valid information" do
->>>>>>> d73a22a571763c0494413a978350d5938ec0e1d2
       let(:new_name)  { "New Name" }
       let(:new_email) { "new@example.com" }
       before do
@@ -210,12 +141,6 @@ describe "User Pages" do
       specify { expect(user.reload.email).to eq new_email }
     end
   end
-<<<<<<< HEAD
-=======
-  
-  
- 
->>>>>>> d73a22a571763c0494413a978350d5938ec0e1d2
 end
 
    

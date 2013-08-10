@@ -1,7 +1,7 @@
 SampleApp2::Application.routes.draw do
   resources :users
   resources :sessions, only: [ :new, :create, :destroy ]
-  resources :value_drivers, only: [:show, :index]
+  resources :value_drivers, only: [:show, :edit, :index]
 
  # get "value_drivers/new"
   
@@ -14,7 +14,7 @@ SampleApp2::Application.routes.draw do
   match '/help', to: 'static_pages#help', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
-  match 'value_driver', to: 'value_drivers#show', via: 'get'  
+ 
 
   # match 'value_driver/index', to: 'value_drivers#index', via: 'get'  
 
